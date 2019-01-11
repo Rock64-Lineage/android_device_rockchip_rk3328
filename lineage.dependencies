@@ -1,0 +1,10 @@
+[
+	{
+		"repository": "device_rockchip_common",
+		""target_path": "device/rockchip/common"
+	},
+        {
+                "repository": "vendor_rockchip_common",
+                ""target_path": "vendor/rockchip/common"
+        }
+]

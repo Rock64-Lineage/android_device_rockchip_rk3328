@@ -1,6 +1,6 @@
-add_lunch_combo rock64_regular-eng
-add_lunch_combo rock64_regular-userdebug
-add_lunch_combo rock64_regular-user
+add_lunch_combo lineage_rk3328-eng
+add_lunch_combo lineage_rk3328-userdebug
+add_lunch_combo lineage_rk3328-user
 add_lunch_combo rock64_atv-eng
 add_lunch_combo rock64_atv-userdebug
 add_lunch_combo rock64_atv-user

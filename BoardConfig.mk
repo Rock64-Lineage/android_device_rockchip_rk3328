@@ -27,6 +27,7 @@ endif
 -include device/rockchip/common/BoardConfig.mk
 
 TARGET_PREBUILT_KERNEL := kernel/arch/arm64/boot/Image
+TARGET_KERNEL_CONFIG := rockchip_smp_nougat_defconfig
 
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -54,6 +55,9 @@ MALLOC_SVELTE := true
 # TARGET_PROVIDES_INIT_RC := true
 
 GRAPHIC_MEMORY_PROVIDER := dma_buf
+
+# Board has no battery
+BUILD_WITHOUT_BATTERY := true
 
 # 1536MB
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648

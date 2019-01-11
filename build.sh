@@ -1,6 +1,6 @@
 #!/bin/bash
 ARCH=arm64
-LUNCH=rk3328_box-userdebug
+LUNCH=lineage_rk3328-userdebug
 UBOOT_DEFCONFIG=rk3328_box_defconfig
 KERNEL_DEFCONFIG=rockchip_smp_nougat_defconfig
 KERNEL_DTS=rk3328-rock64

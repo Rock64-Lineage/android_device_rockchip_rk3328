@@ -37,6 +37,9 @@ $(call inherit-product, device/rockchip/rk3328/product.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
 
@@ -60,16 +63,35 @@ PRODUCT_PACKAGES += \
     displayd \
     hdmi_cec.$(TARGET_BOARD_HARDWARE)
 
-PRODUCT_MANUFACTURER := ayufan
-PRODUCT_BRAND := PINE64
+#PRODUCT_MANUFACTURER := PINE64
+#PRODUCT_BRAND := PINE64
+#PRODUCT_DEVICE := rk3328
+#PRODUCT_NAME := lineage_rk3328
+#PRODUCT_MODEL := Rock64
+# Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := rk3328
-PRODUCT_NAME := rock64_regular
+PRODUCT_NAME := lineage_rk3328
+BOARD_VENDOR := TechOnTouch
+PRODUCT_BRAND := TechOnTouch
 PRODUCT_MODEL := Rock64
+PRODUCT_MANUFACTURER := TechOnTouch
+TARGET_VENDOR := TechOnTouch
 
 # Get the long list of APNs
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
 
-$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+# Build with GApps
+$(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)
 $(call inherit-product, vendor/widevine/widevine.mk)
-$(call inherit-product, vendor/ayufan/apps/vendor.mk)
+$(call inherit-product-if-exists, vendor/ayufan/apps/vendor.mk)
+
+
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := rk3328
+PRODUCT_NAME := lineage_rk3328
+BOARD_VENDOR := TechOnTouch
+PRODUCT_BRAND := TechOnTouch
+PRODUCT_MODEL := Rock64
+PRODUCT_MANUFACTURER := TechOnTouch
+TARGET_VENDOR := TechOnTouch
